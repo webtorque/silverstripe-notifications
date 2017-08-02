@@ -1,0 +1,24 @@
+DistrictHealthBoard:
+  auckland:
+    Title: Auckland
+ClinicianSpeciality:
+  test1:
+    Title: Cancer
+Member:
+  tms:
+    FirstName: 'TMS'
+    Surname: 'Test'
+    Email: 'tms@nzblood.co.nz'
+TMSRoster:
+  auckland:
+    TMS: =>Member.tms
+    DHB: =>DistrictHealthBoard.auckland
+    Priority: 100
+
+NotificationType:
+  boom:
+    SystemName: boom
+    Name: "Boom!"
+    SMSFormat: "Boom {{FirstName}}!"
+    SubjectFormat: "Boom {{FirstName}}!"
+    MessageFormat: "Dear <em>{{FirstName}}</em>, the system just went <strong>boom</strong>!"

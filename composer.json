@@ -1,0 +1,20 @@
+{
+    "name": "webtorque/silverstripe-notifications",
+    "description": "Simple service provider for sending notification to members over different media.",
+    "type": "silverstripe-module",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Maxime Rainville",
+            "email": "maxime@webtorque.co.nz"
+        }
+    ],
+    "require": {
+      "php": ">= 5.4.0, <7.0",
+      "silverstripe/framework": "^3.1.0",
+      "silverstripe/cms": "^3.1.0"
+    },
+    "require-dev": {
+      "phpunit/PHPUnit": "~3.7"
+    }
+}
