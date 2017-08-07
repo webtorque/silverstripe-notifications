@@ -5,7 +5,7 @@
  */
 class NotificationServiceTest extends SapphireTest
 {
-    protected static $fixture_file = 'notifications/tests/NotificationServiceTest.yml';
+    protected static $fixture_file = 'NotificationServiceTest.yml';
     protected $usesDatabase = true;
 
     /**************************************************************
