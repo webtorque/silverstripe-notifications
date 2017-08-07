@@ -19,6 +19,6 @@
       "silverstripe/travis-support": "^0.1.0"
     },
     "extra": {
-	   "installer-name": "notification"
-    },
+      "installer-name": "notification"
+    }
 }
