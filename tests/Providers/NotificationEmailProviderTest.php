@@ -6,7 +6,7 @@
 class NotificationEmailProviderTest extends SapphireTest
 {
     protected $usesDatabase = true;
-    protected static $fixture_file = '../NotificationParserTest.yml';
+    protected static $fixture_file = 'NotificationParserTest.yml';
 
     public function testSend()
     {
