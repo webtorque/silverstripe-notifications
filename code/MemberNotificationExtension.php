@@ -6,7 +6,8 @@
 class MemberNotificationExtension extends DataExtension
 {
     private static $has_many = [
-        'Notifications' => 'Notification'
+        'Notifications' => 'Notification',
+        'MobileNumber' => 'Varchar',
     ];
 
     /**

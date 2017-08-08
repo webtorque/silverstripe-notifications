@@ -6,12 +6,6 @@ class NotificationSmsMessageMediaProviderTest extends SapphireTest
     protected $usesDatabase = true;
     protected static $fixture_file = 'NotificationSmsMessageMediaProviderTest.yml';
 
-    public function setUp()
-    {
-        Member::add_extension('MockMobileMemberExtension');
-        return parent::setUp();
-    }
-
     public function testSimpleSend()
     {
         $provider = new NotificationSmsMessageMediaProvider('e2s.pcsms.us', 'messagemedia@example.com');
@@ -114,11 +108,4 @@ class NotificationSmsMessageMediaProviderTest extends SapphireTest
         $parsedNotification = new MockParsedNotification();
         $delivery = $provider->send($parsedNotification, $member, false);
     }
-}
-
-class MockMobileMemberExtension extends DataExtension
-{
-    private static $db = array(
-        'MobileNumber' => 'Varchar',
-    );
 }
