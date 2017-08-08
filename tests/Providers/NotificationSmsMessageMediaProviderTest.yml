@@ -1,0 +1,28 @@
+NotificationType:
+  boom:
+    SystemName: boom
+    Name: "Boom!"
+    ShortMessageFormat: "Boom $FirstName!"
+    SubjectFormat: "Boom $FirstName!"
+    RichMessageFormat: "Dear <em>$FirstName</em>, the system just went <strong>boom</strong>!"
+Member:
+  tms:
+    FirstName: 'TMS'
+    Surname: '+642876543210'
+    Email: 'tms@example.com'
+    MobileNumber: '+64 21 012 34567'
+  noPhone:
+    FirstName: 'TMS'
+    Surname: 'Test'
+    Email: 'noPhone@example.com'
+    MobileNumber: ''
+  badPhone:
+    FirstName: 'TMS'
+    Surname: 'Test'
+    Email: 'badPhone@example.com'
+    MobileNumber: 'some alpha numeric character'
+  landLine:
+    FirstName: 'TMS'
+    Surname: 'Test'
+    Email: 'landline@example.com'
+    MobileNumber: '+6493096855'
