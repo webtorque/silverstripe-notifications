@@ -5,7 +5,7 @@
  */
 class MemberNotificationExtension extends DataExtension
 {
-    private static $has_one = [
+    private static $db = [
         'MobileNumber' => 'Varchar(50)',
     ];
 
