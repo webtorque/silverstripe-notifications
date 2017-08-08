@@ -7,6 +7,7 @@ notifications while `NotificationDataObjectProvider` will store notifications in
 website frontend.
 
 [![Build Status](https://travis-ci.org/webtorque/silverstripe-notifications.svg?branch=master)](https://travis-ci.org/webtorque/silverstripe-notifications) (Master branch)
+
 [![Build Status DEV](https://travis-ci.org/webtorque/silverstripe-notifications.svg?branch=dev)](https://travis-ci.org/webtorque/silverstripe-notifications) (Dev branch)
 
 ## Requirements
