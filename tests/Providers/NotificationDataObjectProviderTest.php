@@ -1,8 +1,5 @@
 <?php
 
-/**
- * Test registion for Immunoglobin
- */
 class NotificationDataObjectProviderTest extends SapphireTest
 {
     protected $usesDatabase = true;
