@@ -1,0 +1,12 @@
+NotificationType:
+  boom:
+    SystemName: boom
+    Name: "Boom!"
+    ShortMessageFormat: "Short: FirstName = $Member.FirstName AND Foo = $Foo"
+    SubjectFormat: "Subject: FirstName = $Member.FirstName AND Foo = $Foo"
+    RichMessageFormat: "<strong>Rich</strong>: FirstName = $Member.FirstName AND Foo = $Foo"
+Member:
+  tms:
+    FirstName: 'TMS'
+    Surname: 'Test'
+    Email: 'tms@nzblood.co.nz'

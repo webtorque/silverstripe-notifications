@@ -1,0 +1,35 @@
+NotificationType:
+  boom:
+    SystemName: boom
+    Name: "Boom!"
+    ShortMessageFormat: "Boom $FirstName!"
+    SubjectFormat: "Boom $FirstName!"
+    RichMessageFormat: "Dear <em>$FirstName</em>, the system just went <strong>boom</strong>!"
+Member:
+  tms:
+    FirstName: 'TMS'
+    Surname: 'Test'
+    Email: 'tms@nzblood.co.nz'
+  other:
+    FirstName: 'Other'
+    Surname: 'Member'
+    Email: 'other.member@nzblood.co.nz'
+Notification:
+  unread:
+    ShortMessage: "Notification Short message"
+    Subject: "Notification Subject"
+    RichMessage: "Notification <em>Rich</em> Message"
+    Viewed: false
+    Member: =>Member.tms
+  read:
+    ShortMessage: "Notification Short message"
+    Subject: "Notification Subject"
+    RichMessage: "Notification <em>Rich</em> Message"
+    Viewed: true
+    Member: =>Member.tms
+  forbidden:
+    ShortMessage: "Notification Short message"
+    Subject: "Notification Subject"
+    RichMessage: "Notification <em>Rich</em> Message"
+    Viewed: false
+    Member: =>Member.other

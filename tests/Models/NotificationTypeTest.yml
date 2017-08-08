@@ -1,0 +1,12 @@
+Member:
+  tms:
+    FirstName: 'TMS'
+    Surname: 'Test'
+    Email: 'tms@nzblood.co.nz'
+NotificationType:
+  boom:
+    SystemName: boom
+    Name: "Boom!"
+    SMSFormat: "Boom {{FirstName}}!"
+    SubjectFormat: "Boom {{FirstName}}!"
+    MessageFormat: "Dear <em>{{FirstName}}</em>, the system just went <strong>boom</strong>!"
