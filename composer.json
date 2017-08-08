@@ -11,9 +11,8 @@
     ],
     "require": {
         "php": ">= 5.5.0, <=7.2",
-        "silverstripe/framework": "^3.1.0",
-        "silverstripe/cms": "^3.1.0",
-        "giggsey/libphonenumber-for-php": "^8.7"
+        "silverstripe/framework": "^3.2.0",
+        "silverstripe/cms": "^3.2.0"
     },
     "require-dev": {
       "phpunit/PHPUnit": "~3.7",
