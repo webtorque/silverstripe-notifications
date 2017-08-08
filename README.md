@@ -6,7 +6,8 @@ Various notification are handled via a NotificationProvider. e.g.: `Notification
 notifications while `NotificationDataObjectProvider` will store notifications in a DataObject for display one the
 website frontend.
 
-[![Build Status DEV](https://travis-ci.org/webtorque/silverstripe-notifications.svg?branch=dev)](https://travis-ci.org/webtorque/silverstripe-notifications)
+[![Build Status](https://travis-ci.org/webtorque/silverstripe-notifications.svg?branch=master)](https://travis-ci.org/webtorque/silverstripe-notifications) (Master branch)
+[![Build Status DEV](https://travis-ci.org/webtorque/silverstripe-notifications.svg?branch=dev)](https://travis-ci.org/webtorque/silverstripe-notifications) (Dev branch)
 
 ## Requirements
 * PHP 5.5 or greater (tested with up to PHP 7.1)
