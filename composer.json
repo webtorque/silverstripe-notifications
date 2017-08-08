@@ -10,16 +10,21 @@
         }
     ],
     "require": {
-      "php": ">= 5.5.0, <=7.2",
-      "silverstripe/framework": "^3.1.0",
-      "silverstripe/cms": "^3.1.0"
+        "php": ">= 5.5.0, <=7.2",
+        "silverstripe/framework": "^3.1.0",
+        "silverstripe/cms": "^3.1.0",
+        "giggsey/libphonenumber-for-php": "^8.7"
     },
     "require-dev": {
       "phpunit/PHPUnit": "~3.7",
       "silverstripe/travis-support": "^0.1.0",
-      "stevie-mayhew/trait-loader": "^1.0"
+      "stevie-mayhew/trait-loader": "^1.0",
+      "giggsey/libphonenumber-for-php": "^8.0"
     },
     "extra": {
       "installer-name": "notification"
+    },
+    "suggest": {
+        "giggsey/libphonenumber-for-php": "Allows advanced validation of the mobile phonen umber when sending an SMS."
     }
 }
