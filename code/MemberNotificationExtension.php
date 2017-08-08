@@ -5,8 +5,12 @@
  */
 class MemberNotificationExtension extends DataExtension
 {
+    private static $db = [
+        'MobileNumber' => 'Varchar(50)',
+    ];
+
     private static $has_many = [
-        'Notifications' => 'Notification'
+        'Notifications' => 'Notification',
     ];
 
     /**

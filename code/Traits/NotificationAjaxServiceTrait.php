@@ -34,7 +34,7 @@ trait NotificationAjaxServiceTrait
         return Notification::get()
             ->filter([
                 'MemberID'  => $member->ID,
-                'Viewed'    => false,
+                'Viewed'    => 0,
             ])
             ->sort('Created');
     }

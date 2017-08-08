@@ -5,7 +5,7 @@
  */
 class NotificationServiceTest extends SapphireTest
 {
-    protected static $fixture_file = 'notifications/tests/NotificationServiceTest.yml';
+    protected static $fixture_file = 'NotificationServiceTest.yml';
     protected $usesDatabase = true;
 
     /**************************************************************
@@ -131,7 +131,7 @@ class NotificationServiceTest extends SapphireTest
         $this->assertCount(1, $notifications);
         foreach ($notifications as $notification) {
             $this->assertInstanceOf(Notification::class, $notification);
-            $this->assertEquals($tms->ID, $notification->ID);
+            $this->assertEquals($tms->ID, $notification->MemberID);
         }
 
         // Test for admin who shouldn't have any notification
@@ -144,7 +144,7 @@ class NotificationServiceTest extends SapphireTest
         $this->assertCount(1, $notifications, 'TMS should have one unraed notification when counted by Admin.');
         foreach ($notifications as $notification) {
             $this->assertInstanceOf(Notification::class, $notification);
-            $this->assertEquals($tms->ID, $notification->ID);
+            $this->assertEquals($tms->ID, $notification->MemberID);
         }
     }
 

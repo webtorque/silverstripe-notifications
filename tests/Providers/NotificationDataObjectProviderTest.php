@@ -1,12 +1,9 @@
 <?php
 
-/**
- * Test registion for Immunoglobin
- */
 class NotificationDataObjectProviderTest extends SapphireTest
 {
     protected $usesDatabase = true;
-    protected static $fixture_file = 'notifications/tests/NotificationParserTest.yml';
+    protected static $fixture_file = 'NotificationParserTest.yml';
 
     public function testSend()
     {
