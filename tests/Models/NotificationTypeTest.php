@@ -28,4 +28,31 @@ class NotificationTypeTest extends SapphireTest
             '`bySystemName` should return null when provided a invalid system name'
         );
     }
+
+    public function testDefaultRecords()
+    {
+        /**
+         * @var NotificationType
+         */
+        Config::inst()->update('NotificationType', 'default_records', [
+            ['SystemName' => 'TestOne', 'Name' => 'Test One'],
+            ['SystemName' => 'TestTwo', 'Name' => 'Test Two'],
+        ]);
+        $singleton = NotificationType::singleton();
+        $singleton->requireDefaultRecords();
+
+        $t1 = NotificationType::bySystemName('TestOne');
+        $this->assertNotEmpty(
+            $t1,
+            'Notification Type with a System name of TestOne should have been created.'
+        );
+        $this->assertEquals('Test One', $t1->Name, 'TestOne should have been created with a Name of "Test One"');
+
+        $t2 = NotificationType::bySystemName('TestTwo');
+        $this->assertNotEmpty(
+            $t2,
+            'Notification Type with a System name of TestTwo should have been created.'
+        );
+        $this->assertEquals('Test Two', $t2->Name, 'TestTwo should have been created with a Name of "Test Two"');
+    }
 }
