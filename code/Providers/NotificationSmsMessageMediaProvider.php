@@ -46,7 +46,7 @@ class NotificationSmsMessageMediaProvider implements NotificationProviderInterfa
      * Instanciate this NotificationSmsMessageMediaProvider.
      * @param string $destinationDomain Domain to use for the email message sent to Message Media. e.g.: `e2s.pcsms.us`.
      * @param string $fromEmail         The email address that will be used in the email's FROM header. If left blank,
-     *                                  will default
+     *                                  will default.
      * @param string $phoneNumberField  Fieldname that contains the mobile number on the Member object.
      * @param string $defaultCountry    Default country code to use when analyzing a mobile phone number.
      */
@@ -144,7 +144,7 @@ class NotificationSmsMessageMediaProvider implements NotificationProviderInterfa
     /**
      * Basic phone validation in case PhoneNumberUtil is not available. This does not validate the phone beyond
      * removing all non-digit characters and making sure the phone string is non-empty.
-     * @param string    $phone Phone number string to parse.
+     * @param string $phone Phone number string to parse.
      * @throws NotificationFailureException If the phone number is invalid.
      * @return string
      */
@@ -206,9 +206,10 @@ class NotificationSmsMessageMediaProvider implements NotificationProviderInterfa
      * library if it's installed. Using this flag you can test the logic for when the library is missing. This is meant
      * for testing only.
      * @param boolean $value Value of the flag.
+     * @return void
      */
     public function setForceBasicPhoneParsing($value)
     {
-        return $this->forceBasicPhoneParsing = (boolean)$value;
+        $this->forceBasicPhoneParsing = (boolean)$value;
     }
 }

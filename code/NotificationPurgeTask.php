@@ -25,10 +25,10 @@ class NotificationPurgeTask extends BuildTask
 
     /**
      * @inheritDoc
-     * @param  SS_HTTPRequest $request HTTP Request.
+     * @param  mixed $request HTTP Request.
      * @return void
      */
-    public function run(SS_HTTPRequest $request)
+    public function run($request)
     {
         // Get all types not in the default list
         $defaultRecords = NotificationType::config()->get('default_records', Config::UNINHERITED);
