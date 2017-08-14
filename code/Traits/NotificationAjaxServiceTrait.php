@@ -32,10 +32,8 @@ trait NotificationAjaxServiceTrait
         }
 
         return Notification::get()
-            ->filter([
-                'MemberID'  => $member->ID,
-                'Viewed'    => 0,
-            ])
+            ->filter('MemberID', $member->ID)
+            ->where('"ViewedOn" IS NULL')
             ->sort('Created');
     }
 
@@ -84,7 +82,7 @@ trait NotificationAjaxServiceTrait
 
         $update = SQLUpdate::create('"Notification"')
             ->addWhere(['MemberID' => $member->ID])
-            ->addAssignments(['Viewed' => true])
+            ->addAssignments(['ViewedOn' => SS_Datetime::now()->getValue()])
             ->execute();
     }
 

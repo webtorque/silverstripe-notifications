@@ -4,13 +4,14 @@
  * Represent a notification that is attached to a specific member. Is normally created by
  * {@link NotificationDataObjectProvider}.
  *
- * @property string     $Subject
- * @property string     $ShortMessage
- * @property string     $RichMessage
- * @property boolean    $Viewed
- * @property string     $CallToActionURL
- * @property integer    $MemberID
- * @property Member     $Member
+ * @property string         $Subject
+ * @property string         $ShortMessage
+ * @property string         $RichMessage
+ * @property boolean        $Viewed
+ * @property SS_Datetime    $ViewedOn
+ * @property string         $CallToActionURL
+ * @property integer        $MemberID
+ * @property Member         $Member
  */
 class Notification extends DataObject
 {
@@ -18,7 +19,7 @@ class Notification extends DataObject
         'Subject' => 'Text',
         'ShortMessage' => 'Text',
         'RichMessage' => 'HTMLText',
-        'Viewed' => 'Boolean',
+        'ViewedOn' => 'Datetime',
         'CallToActionURL' => 'Varchar(128)'
     ];
 
@@ -32,13 +33,9 @@ class Notification extends DataObject
         'Subject' => 'Subject'
     );
 
-    private $defaults = [
-        'Viewed' => false
-    ];
-
     private static $default_sort = [
         'Created' => 'ASC'
-     ];
+    ];
 
     /**
      * @inheritDoc
@@ -94,5 +91,25 @@ class Notification extends DataObject
         }
 
         return $member->ID == $this->MemberID;
+    }
+
+    /**
+     * Accessor for the Viewed attribute
+     * @return boolean
+     */
+    public function getViewed()
+    {
+        return (boolean)$this->ViewedOn;
+    }
+
+    /**
+     * Mutator for theViewed attribute.
+     * @param boolean $value New value.
+     */
+    public function setViewed($value)
+    {
+        if ($value != $this->Viewed) {
+            $this->ViewedOn = $value ? SS_Datetime::now()->getValue() : null;
+        }
     }
 }
