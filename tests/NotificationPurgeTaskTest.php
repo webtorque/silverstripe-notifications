@@ -10,13 +10,15 @@ class NotificationPurgeTaskTest extends SapphireTest
 
     public function testRun()
     {
-        $singleton = NotificationType::singleton();
-        $singleton->config()->update('default_records', [
+        Config::inst()->update('NotificationType', 'default_records', [
             ['SystemName' => 'TestOne', 'Name' => 'Test One'],
             ['SystemName' => 'TestTwo', 'Name' => 'Test Two'],
         ]);
 
+        $singleton = NotificationType::singleton();
+        ob_start(); // Suppress output
         NotificationPurgeTask::singleton()->run(new NotificationPurgeTask());
+        ob_get_clean(); // Unsuppress output
 
         $this->assertEmpty(NotificationType::bySystemName('boom'), 'Boom Notification Type should have been removed by NotificationPurgeTask.');
         $this->assertNotEmpty(NotificationType::bySystemName('TestOne'), 'TestOne Notification Type should still be there.');

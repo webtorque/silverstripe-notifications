@@ -34,11 +34,11 @@ class NotificationTypeTest extends SapphireTest
         /**
          * @var NotificationType
          */
-        $singleton = NotificationType::singleton();
-        $singleton->config()->update('default_records', [
+        Config::inst()->update('NotificationType', 'default_records', [
             ['SystemName' => 'TestOne', 'Name' => 'Test One'],
             ['SystemName' => 'TestTwo', 'Name' => 'Test Two'],
         ]);
+        $singleton = NotificationType::singleton();
         $singleton->requireDefaultRecords();
 
         $t1 = NotificationType::bySystemName('TestOne');
