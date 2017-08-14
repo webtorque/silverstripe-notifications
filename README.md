@@ -1,12 +1,10 @@
-# silverstripe-notifications
+# silverstripe-notifications [![Build Status](https://travis-ci.org/webtorque/silverstripe-notifications.svg?branch=master)](https://travis-ci.org/webtorque/silverstripe-notifications)
 A SilverStripe module for handling notifications to user. This can be use to send notifications via various mediums to a
 Member.
 
 Various notification are handled via a NotificationProvider. e.g.: `NotificationEmailProvider` will send email
 notifications while `NotificationDataObjectProvider` will store notifications in a DataObject for display one the
 website frontend.
-
-[![Build Status](https://travis-ci.org/webtorque/silverstripe-notifications.svg?branch=master)](https://travis-ci.org/webtorque/silverstripe-notifications)
 
 ## Requirements
 * PHP 5.5 or greater (tested with up to PHP 7.1)
