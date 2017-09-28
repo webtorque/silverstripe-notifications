@@ -125,7 +125,9 @@ class NotificationType extends DataObject
                 $do = new self($record);
             }
             $do->Name = $record['Name'];
-            $do->FormatVariables = $record['FormatVariables'];
+            if (isset($record['FormatVariables'])) {
+                $do->FormatVariables = $record['FormatVariables'];
+            }
             $do->write();
         }
     }
