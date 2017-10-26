@@ -16,7 +16,7 @@ class NotificationDataObjectProvider implements NotificationProviderInterface
     {
         $do = new Notification();
         try {
-            $do->Subject = $notification->getSubject();
+            $do->Subject = $notification->getSystemSubject() ?: $notification->getSubject();
             $do->ShortMessage = $notification->getShortMessage();
             $do->RichMessage = $notification->getRichMessage();
             $do->MemberID = $member->ID;

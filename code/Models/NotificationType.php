@@ -11,9 +11,11 @@
  * @property-read   string          $FormatVariables        List of type specific variables that can be used. Must be a
  *                                                          comma-sperated string.
  * @property        string          $SubjectFormat          Format for the subject of the notification type.
- * @property        HTMLText        $MessageFormat          Format for the content of the notification type.
+ * @property        HTMLText        $RichMessageFormat      Format for the content of the notification type.
  * @property        string          $ShortMessageFormat     Format for the content of the notification type.
- * @property        string          $ShortMessageFormat     Format for the content of the notification type.
+ * @property        string          $SystemSubjectFormat    Similar to `$SubjectFormat` but is only use in the system.
+ *                                                          So it's more suitable for personal details that might not be
+ *                                                          provided by email.
  * @todo Add a variable list to the help text editors know what variables they can use.
  */
 class NotificationType extends DataObject
@@ -25,6 +27,7 @@ class NotificationType extends DataObject
         'FormatVariables'       => 'Text',
         'ShortMessageFormat'    => 'Varchar(160)',
         'RichMessageFormat'     => 'HTMLText',
+        'SystemSubjectFormat'   => 'Varchar(255)',
     ];
 
     private static $summary_fields = [
