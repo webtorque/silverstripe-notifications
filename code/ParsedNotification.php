@@ -9,6 +9,7 @@ class ParsedNotification implements ParsedNotificationInterface
     protected $data;
     protected $member;
     protected $subject=false;
+    protected $systemSubject=false;
     protected $shortMessage=false;
     protected $richMessage=false;
 
@@ -38,8 +39,9 @@ class ParsedNotification implements ParsedNotificationInterface
     {
         return $this->getGeneric('subject', 'SubjectFormat');
     }
+
     /**
-     * Retrieve a short statement suitable for an Email message subject line.
+     * Retrieve a short statement suitable for display in a private setting.
      * @return string
      */
     public function getSystemSubject()

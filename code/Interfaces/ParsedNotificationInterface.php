@@ -24,4 +24,10 @@ interface ParsedNotificationInterface
      * @return string
      */
     public function getRichMessage();
+
+    /**
+     * Retrieve a short statement suitable for display in a private setting.
+     * @return string
+     */
+    public function getSystemSubject();
 }

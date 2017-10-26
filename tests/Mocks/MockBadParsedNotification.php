@@ -6,4 +6,8 @@ class MockBadParsedNotification extends MockParsedNotification
     {
         throw new Exception('Mock Exception');
     }
+    public function getSystemSubject()
+    {
+        throw new Exception('Mock Exception');
+    }
 }

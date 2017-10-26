@@ -5,6 +5,7 @@ NotificationType:
     ShortMessageFormat: "Short: FirstName = $Member.FirstName AND Foo = $Foo"
     SubjectFormat: "Subject: FirstName = $Member.FirstName AND Foo = $Foo"
     RichMessageFormat: "<strong>Rich</strong>: FirstName = $Member.FirstName AND Foo = $Foo"
+    SystemSubjectFormat: "System Subject: FirstName = $Member.FirstName AND Foo = $Foo"
 Member:
   tms:
     FirstName: 'TMS'

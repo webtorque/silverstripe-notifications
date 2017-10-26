@@ -16,4 +16,8 @@ class MockParsedNotification implements ParsedNotificationInterface
     {
         return 'Mock rich message response';
     }
+
+    public function getSystemSubject() {
+        return 'Mock system subject response';
+    }
 }

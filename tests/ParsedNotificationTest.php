@@ -19,5 +19,6 @@ class ParsedNotificationTest extends SapphireTest
         $this->assertEquals("Short: $expected", $notifcation->getShortMessage());
         $this->assertEquals("Subject: $expected", $notifcation->getSubject());
         $this->assertEquals("<strong>Rich</strong>: $expected", $notifcation->getRichMessage());
+        $this->assertEquals("System Subject: $expected", $notifcation->getSystemSubject());
     }
 }
