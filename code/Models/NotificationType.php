@@ -26,8 +26,8 @@ class NotificationType extends DataObject
         'SubjectFormat'         => 'Varchar(255)',
         'FormatVariables'       => 'Text',
         'ShortMessageFormat'    => 'Varchar(160)',
-        'RichMessageFormat'     => 'HTMLText',
         'SystemSubjectFormat'   => 'Varchar(255)',
+        'RichMessageFormat'     => 'HTMLText',
     ];
 
     private static $summary_fields = [
