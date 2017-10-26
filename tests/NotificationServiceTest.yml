@@ -21,6 +21,12 @@ Notification:
     RichMessage: "Notification <em>Rich</em> Message"
     ViewedOn: null
     Member: =>Member.tms
+  empty:
+    ShortMessage: ""
+    Subject: ""
+    RichMessage: ""
+    ViewedOn: null
+    Member: =>Member.tms
   read:
     ShortMessage: "Notification Short message"
     Subject: "Notification Subject"

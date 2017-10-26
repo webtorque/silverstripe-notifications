@@ -33,6 +33,7 @@ trait NotificationAjaxServiceTrait
 
         return Notification::get()
             ->filter('MemberID', $member->ID)
+            ->exclude('Subject', '')
             ->where('"ViewedOn" IS NULL')
             ->sort('Created');
     }
