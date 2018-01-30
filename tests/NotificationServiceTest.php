@@ -33,7 +33,7 @@ class NotificationServiceTest extends SapphireTest
 
         // Make sure we got the right number of deliveries
         $this->assertEmpty($result->getFailures());
-        $this->assertCount($members->Count(), $result->getDeliveries());
+        $this->assertCount(sizeof($members), $result->getDeliveries());
 
         // Make sure each Member of our member got a personalise notification
         $deliveries = $result->getDeliveries();
