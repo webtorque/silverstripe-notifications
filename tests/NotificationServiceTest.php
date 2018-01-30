@@ -22,6 +22,28 @@ class NotificationServiceTest extends SapphireTest
         $this->assertNotEmpty($result->getDeliveries());
     }
 
+    public function testSucessSendToManyMembers()
+    {
+        $service = new NotificationService(new MockMemberedParser(), [new MockMemberedNotificationProvider()]);
+        $members = Member::get();
+
+        $result = $service->send('mock', ["foo"=>"bar"], $members);
+
+        $this->assertInstanceOf(NotificationResponseInterface::class, $result);
+
+        // Make sure we got the right number of deliveries
+        $this->assertEmpty($result->getFailures());
+        $this->assertCount(sizeof($members), $result->getDeliveries());
+
+        // Make sure each Member of our member got a personalise notification
+        $deliveries = $result->getDeliveries();
+        foreach ($members as $i => $member) {
+            $delivery = $deliveries[$i];
+            $this->assertEquals($delivery->getMember(), $member);
+            $this->assertEquals($delivery->getSubject(), 'Mock subject response for ' . $member->Name);
+        }
+    }
+
     public function testBadParser()
     {
         $this->setExpectedException(NotificationFailureException::class);
