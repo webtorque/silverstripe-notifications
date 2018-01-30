@@ -31,25 +31,35 @@ class NotificationService implements NotificationServiceInterface, NotificationA
 
     /**
      * {@inheritDoc}
-     * @param string $type            Type of the notification.
-     * @param array  $data            The provider used to parse the content.
-     * @param Member $member          The person to sent to.
-     * @param mixed  $callToActionURL Relative or absolute URL to an action specific to the notice.
-     * @return NotificationResponseInterface    Information about the delivery of a notifcation
-     * @throws NotificationFailureException     Will provide information about why a notification request has failed.
+     * @param string            $type               Type of the notification.
+     * @param array             $data               The provider used to parse the content.
+     * @param Member|Member[]   $members            The person or persons to sent to.
+     * @param mixed             $callToActionURL    Relative or absolute URL to an action specific to the notice.
+     * @return NotificationResponseInterface        Information about the delivery of a notifcation.
+     * @throws NotificationFailureException         Information about why a notification request has failed.
      */
-    public function send($type, array $data, Member $member, $callToActionURL = false)
+    public function send($type, array $data, $members, $callToActionURL = false)
     {
-        $parsedNotification = $this->parser->parse($type, $data, $member, $callToActionURL);
+        // If we receive a single Member, wrap it in an array.
+        if ($members instanceof Member) {
+            $members = [$members];
+        }
 
-        // Loop over all our providers and store the delviery status
+        // Initialise the Notification.
         $response = new NotificationResponse();
-        foreach ($this->providers as $provider) {
-            try {
-                $delivery = $provider->send($parsedNotification, $member, $callToActionURL);
-                $response->addDelivery($delivery);
-            } catch (NotificationFailureException $ex) {
-                $response->addFailure($ex);
+
+        // Loop over all the members
+        foreach ($members as $member) {
+            $parsedNotification = $this->parser->parse($type, $data, $member, $callToActionURL);
+
+            // Loop over all our providers and store the delviery status
+            foreach ($this->providers as $provider) {
+                try {
+                    $delivery = $provider->send($parsedNotification, $member, $callToActionURL);
+                    $response->addDelivery($delivery);
+                } catch (NotificationFailureException $ex) {
+                    $response->addFailure($ex);
+                }
             }
         }
 
