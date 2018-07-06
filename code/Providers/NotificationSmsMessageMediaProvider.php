@@ -86,10 +86,6 @@ class NotificationSmsMessageMediaProvider implements NotificationProviderInterfa
             ->setFrom($this->fromEmail)
             ->setSubject($subject);
 
-        if(Config::inst()->get('Email', 'queuing') == true){
-            $email = $email->addCustomHeader('queue', 1);
-        }
-
         try {
             $email->send();
         } catch (Exception $ex) {

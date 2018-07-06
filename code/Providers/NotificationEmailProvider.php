@@ -15,6 +15,11 @@ class NotificationEmailProvider implements NotificationProviderInterface
     public function send(ParsedNotificationInterface $notification, Member $member, $callToActionURL = false)
     {
         $email = new Email();
+
+        if(Config::inst()->get('Email', 'queuing') == true){
+            $email = $email->addCustomHeader('queue', 1);
+        }
+
         try {
             $response = $email
                 ->setTo($member->Email)
